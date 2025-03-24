@@ -1,0 +1,140 @@
+/* General Styles */
+.single-report {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Stock Details Section */
+  .stock-details {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  }
+  
+  .stock-details h3 {
+    color: #34495e;
+    font-size: 24px;
+    font-weight: 500;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+  }
+  
+  .stock-details p {
+    color: #555;
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  
+  .stock-details strong {
+    color: #2c3e50;
+    font-weight: 500;
+  }
+  
+  /* Report Data Section */
+  .report-section {
+    margin-top: 30px;
+  }
+  
+  .report-section h3 {
+    color: #34495e;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+  
+  .report-files {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .report-files img {
+    max-width: 120px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .report-files img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* No Reports Message */
+  .no-reports {
+    text-align: center;
+    color: #777;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  /* Back to Home Link */
+  
+  
+  .back-link {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  /* Fullscreen Image Preview */
+.image-preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .single-report {
+      padding: 20px;
+    }
+  
+    .stock-details h3 {
+      font-size: 22px;
+    }
+  
+    .stock-details p {
+      font-size: 14px;
+    }
+  
+    .report-files img {
+      max-width: 100px;
+    }
+  
+    .back-link {
+      width: 100%;
+      text-align: center;
+    }
+  }

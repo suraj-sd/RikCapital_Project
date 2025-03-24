@@ -1,0 +1,44 @@
+<div class="login-wrapper">
+  <form class="container" #registerForm="ngForm">
+    <h4 class="form-title">Please Login</h4>
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Enter email here"
+        required
+        ngModel
+        name="email"
+        #email="ngModel"
+        class="form-input"
+      />
+      <h5 class="error-message" [hidden]="email.valid || email.untouched">
+        Enter a valid email
+      </h5>
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Enter password here"
+        required
+        minlength="6"
+        ngModel
+        name="password"
+        #password="ngModel"
+        class="form-input"
+      />
+      <h5 class="error-message" [hidden]="password.valid || password.untouched">
+        Password must be at least 6 characters
+      </h5>
+    </div>
+    <div class="button-group">
+      <button
+        class="btn btn-green"
+        [disabled]="registerForm.invalid"
+        (click)="register(registerForm)"
+      >
+        Login
+      </button>
+      <button class="btn btn-red" (click)="reset(registerForm)">Reset</button>
+    </div>
+  </form>
+</div>

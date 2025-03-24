@@ -1,0 +1,119 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding-top: 20px; /* Adjust this value based on your nav bar height */
+  }
+  
+  /* Login Wrapper */
+  .login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(80vh - 60px); /* Adjust height to account for the navigation bar */
+  }
+  
+  /* Form Container */
+  .container {
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  
+  /* Form Title */
+  .form-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+  }
+  
+  /* Input Wrapper */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Input Fields */
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  
+  .form-input:focus {
+    border-color: #007bff;
+    outline: none;
+  }
+  
+  /* Error Messages */
+  .error-message {
+    color: #ff3860;
+    font-size: 0.875rem;
+    margin-top: 0.5rem;
+    /* display: none; */
+  }
+  
+
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-green {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .btn-green:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+  }
+  
+  .btn-red {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-red:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+  }
+
+  .btn-green:disabled ,.btn-red:disabled{
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+

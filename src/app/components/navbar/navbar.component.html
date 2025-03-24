@@ -1,0 +1,25 @@
+<div>
+  <nav>
+    <h2>
+      <a routerLink="" routerLinkActive="active">Rik Capital</a>
+    </h2>
+    <ul>
+      <li>
+        <a routerLink="/uploadReport" routerLinkActive="active"
+          >Upload Reports</a
+        >
+      </li>
+      <!-- <li><a routerLink="/login" routerLinkActive="active">login</a></li> -->
+      <ul>
+        <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+        <li *ngIf="isLoggedIn"><a (click)="logout()">Logout</a></li>
+      </ul>
+
+      <li><a routerLink="/signup" routerLinkActive="active">signup</a></li>
+      <li><a routerLink="/about" routerLinkActive="active">about</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+    </ul>
+  </nav>
+
+  <hr />
+</div>

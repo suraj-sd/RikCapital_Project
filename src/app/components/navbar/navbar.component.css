@@ -1,0 +1,61 @@
+/* General styles for the navigation bar */
+nav {
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between h2 and ul */
+    align-items: center; /* Vertically center items */
+  }
+  
+  /* Style for the main heading link */
+  nav h2 a {
+    color: #007bff; /* Blue color for the main heading link */
+    text-decoration: none; /* Remove underline */
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  nav h2 a:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  /* Style for the list container */
+  nav ul {
+    list-style: none; /* Remove bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* Align items horizontally */
+    gap: 20px; /* Space between items */
+  }
+  
+  /* Style for the links */
+  nav ul li a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none; /* Remove underline */
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px; /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+  }
+  
+  /* Hover effect for links */
+  nav ul li a:hover {
+    color: #ffffff; /* White text on hover */
+    background-color: #007bff; /* Blue background on hover */
+  }
+  
+  /* Active link style */
+  nav ul li a.active {
+    color: #ffffff; /* White text for active link */
+    background-color: #0056b3; /* Darker blue background for active link */
+    font-weight: bold;
+  }
+  
+  /* Horizontal line styling */
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #007bff; /* Blue color for the horizontal line */
+    margin: 10px 0;
+  }

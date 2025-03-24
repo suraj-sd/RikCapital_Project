@@ -1,0 +1,70 @@
+<div class="login-wrapper">
+  <form class="container" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <h4 class="form-title">Contact Us</h4>
+
+    <!-- Name Field -->
+    <div class="form-group">
+      <input
+        type="text"
+        placeholder="Enter name here"
+        formControlName="name"
+        class="form-input"
+      />
+      <h5
+        class="error-message"
+        *ngIf="
+          contactForm.controls['name'].invalid &&
+          contactForm.controls['name'].touched
+        "
+      >
+        Name must be at least 3 characters long
+      </h5>
+    </div>
+
+    <!-- Email Field -->
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Enter email here"
+        formControlName="email"
+        class="form-input"
+      />
+      <h5
+        class="error-message"
+        *ngIf="
+          contactForm.controls['email'].invalid &&
+          contactForm.controls['email'].touched
+        "
+      >
+        Enter a valid email
+      </h5>
+    </div>
+
+    <!-- Message Field -->
+    <div class="form-group">
+      <textarea
+        placeholder="Enter your message here"
+        formControlName="message"
+        class="form-input"
+      ></textarea>
+      <h5
+        class="error-message"
+        *ngIf="
+          contactForm.controls['message'].invalid &&
+          contactForm.controls['message'].touched
+        "
+      >
+        Message must be at least 10 characters long
+      </h5>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-green" [disabled]="contactForm.invalid">
+        Submit
+      </button>
+      <button class="btn btn-red" type="button" (click)="contactForm.reset()">
+        Reset
+      </button>
+    </div>
+  </form>
+</div>
