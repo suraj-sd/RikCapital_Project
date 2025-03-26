@@ -90,7 +90,10 @@ export class UploadReportsComponent {
     console.log('FormData:', formData); // Check the FormData being sent
 
     this.http
-      .post('http://localhost:4300/api/v1/ur/addReport', formData)
+      .post(
+        'https://rikcapital-backend.onrender.com/api/v1/ur/addReport',
+        formData
+      )
       .subscribe({
         next: (response) => {
           console.log('Upload successful', response);

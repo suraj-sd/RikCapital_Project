@@ -6,7 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ViewReportsService {
-  private apiUrl = 'http://localhost:4300/api/v1/ur/getStockReport';
+  // private apiUrl = 'http://localhost:4300/api/v1/ur/getStockReport';
+  private apiUrl =
+    'https://rikcapital-backend.onrender.com/api/v1/ur/getStockReport';
 
   constructor(private http: HttpClient) {}
 

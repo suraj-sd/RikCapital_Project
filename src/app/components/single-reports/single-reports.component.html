@@ -37,12 +37,18 @@
           <img
             *ngFor="let file of reportData[quarter]"
             [src]="
-              'http://localhost:4300/uploads/reports/' + quarter + '/' + file
+              'https://rikcapital-backend.onrender.com/uploads/reports/' +
+              quarter +
+              '/' +
+              file
             "
             alt="Report Image"
             (click)="
               openImagePreview(
-                'http://localhost:4300/uploads/reports/' + quarter + '/' + file
+                'https://rikcapital-backend.onrender.com/uploads/reports/' +
+                  quarter +
+                  '/' +
+                  file
               )
             "
           />

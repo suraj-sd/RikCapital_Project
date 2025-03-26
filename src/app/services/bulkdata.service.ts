@@ -64,7 +64,9 @@ export interface BulkDataResponse {
   providedIn: 'root',
 })
 export class BulkdataService {
-  private apiUrl = 'http://localhost:4300/api/v1/bdu/bulkget';
+  // private apiUrl = 'http://localhost:4300/api/v1/bdu/bulkget';
+
+  private apiUrl = 'https://rikcapital-backend.onrender.com/api/v1/bdu/bulkget';
 
   constructor(private http: HttpClient) {}
 
