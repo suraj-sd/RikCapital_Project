@@ -1,0 +1,51 @@
+<div class="bdu-list">
+  <h2>Bulk Data List</h2>
+  <form [formGroup]="bulkDataForm">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>BSE Code</th>
+          <th>NSE Code</th>
+          <th>Industry</th>
+          <th>Current Price</th>
+          <th>Market Cap</th>
+        </tr>
+      </thead>
+      <tbody formArrayName="bulkData">
+        <tr
+          *ngFor="let item of bulkData.controls; let i = index"
+          [formGroupName]="i"
+        >
+          <td><input type="text" formControlName="Name" readonly /></td>
+          <td>
+            <a [routerLink]="['/single-report', item.get('BSE_code')?.value]">
+              {{ item.get("BSE_code")?.value }}
+            </a>
+          </td>
+          <td><input type="text" formControlName="NSE_code" readonly /></td>
+          <td><input type="text" formControlName="Industry" readonly /></td>
+          <td>
+            <input type="text" formControlName="Current_Price" readonly />
+          </td>
+          <td>
+            <input
+              type="text"
+              formControlName="Market_Capitalization"
+              readonly
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">
+      Previous
+    </button>
+    <span> Page {{ currentPage }} of {{ totalPages }} </span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">
+      Next
+    </button>
+  </div>
+</div>

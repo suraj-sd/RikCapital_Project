@@ -1,0 +1,60 @@
+<form [formGroup]="uploadForm" (ngSubmit)="onSubmit()" class="upload-form">
+  <div class="form-group">
+    <label for="BSE_code">BSC Code:</label>
+    <input
+      id="BSE_code"
+      placeholder="Enter BSC Code"
+      formControlName="BSE_code"
+      required
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="name">Company Name:</label>
+    <input
+      id="name"
+      placeholder="Enter Company Name Here"
+      formControlName="name"
+      required
+    />
+  </div>
+
+  <div class="file-upload-grid">
+    <div
+      *ngFor="
+        let control of [
+          'report1',
+          'report2',
+          'report3',
+          'report4',
+          'report5',
+          'report6'
+        ]
+      "
+      class="file-upload-item"
+    >
+      <label [for]="control" class="file-label">
+        <span>{{ control | titlecase }}:</span>
+        <input
+          type="file"
+          [id]="control"
+          (change)="onFileChange($event, control)"
+          accept="image/*"
+          class="file-input"
+        />
+        <div class="image-preview" *ngIf="imagePreviews[control]">
+          <img
+            [src]="imagePreviews[control]"
+            alt="Preview"
+            class="preview-image"
+          />
+        </div>
+        <div class="upload-icon">📁 Upload</div>
+      </label>
+    </div>
+  </div>
+
+  <button type="submit" [disabled]="uploadForm.invalid" class="submit-button">
+    Upload
+  </button>
+</form>

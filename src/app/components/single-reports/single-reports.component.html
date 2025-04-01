@@ -1,0 +1,83 @@
+<div class="single-report">
+  <h2>Stock Report</h2>
+
+  <!-- Stock Data Form -->
+  <form [formGroup]="stockForm">
+    <div class="stock-details">
+      <h3>{{ stockForm.get("Name")?.value }}</h3>
+      <p><strong>BSE Code:</strong> {{ stockForm.get("BSE_code")?.value }}</p>
+      <p>
+        <strong>NSE Code:</strong>
+        {{ stockForm.get("NSE_code")?.value || "N/A" }}
+      </p>
+      <p><strong>Industry:</strong> {{ stockForm.get("Industry")?.value }}</p>
+      <p>
+        <strong>Current Price:</strong> ₹{{
+          stockForm.get("Current_Price")?.value
+        }}
+      </p>
+      <p>
+        <strong>Market Cap:</strong> ₹{{
+          stockForm.get("Market_Capitalization")?.value
+        }}
+      </p>
+    </div>
+  </form>
+
+  <!-- Report Data Section -->
+  <div *ngIf="reportData">
+    <h3>Quarterly Reports</h3>
+
+    <div
+      *ngFor="let quarter of ['quarter1', 'quarter2', 'quarter3', 'quarter4']"
+    >
+      <div *ngIf="reportData[quarter]?.length > 0">
+        <h4>{{ quarter | titlecase }}</h4>
+        <div class="report-files">
+          <img
+            *ngFor="let file of reportData[quarter]"
+            [src]="
+              'https://rikcapital-backend.onrender.com/uploads/reports/' +
+              quarter +
+              '/' +
+              file
+            "
+            alt="Report Image"
+            (click)="
+              openImagePreview(
+                'https://rikcapital-backend.onrender.com/uploads/reports/' +
+                  quarter +
+                  '/' +
+                  file
+              )
+            "
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Display message if no reports are available -->
+    <div
+      *ngIf="
+        reportData.quarter1.length === 0 &&
+        reportData.quarter2.length === 0 &&
+        reportData.quarter3.length === 0 &&
+        reportData.quarter4.length === 0
+      "
+    >
+      <p>No reports available for this stock.</p>
+    </div>
+  </div>
+
+  <!-- Fullscreen Image Preview -->
+  <div
+    *ngIf="selectedImage"
+    class="image-preview-overlay"
+    (click)="closeImagePreview()"
+  >
+    <img [src]="selectedImage" class="preview-image" />
+  </div>
+
+  <!-- Back to Home Link -->
+  <a class="back-link" routerLink="/">Back to Home</a>
+</div>

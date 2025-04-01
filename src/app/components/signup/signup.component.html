@@ -1,0 +1,124 @@
+<!-- <div class="login-wrapper">
+  <form class="container" #registerForm="ngForm">
+    <h4 class="form-title">Please Login</h4>
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Enter email here"
+        required
+        ngModel
+        name="email"
+        #email="ngModel"
+        class="form-input"
+      />
+      <h5 class="error-message" [hidden]="email.valid || email.untouched">
+        Enter a valid email
+      </h5>
+    </div>
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Enter password here"
+        required
+        minlength="6"
+        ngModel
+        name="password"
+        #password="ngModel"
+        class="form-input"
+      />
+      <h5 class="error-message" [hidden]="password.valid || password.untouched">
+        Password must be at least 6 characters
+      </h5>
+    </div>
+    <div class="button-group">
+      <button
+        class="btn btn-green"
+        [disabled]="registerForm.invalid"
+        (click)="register(registerForm)"
+      >
+        sign up
+      </button>
+      <button class="btn btn-red" (click)="reset(registerForm)">Reset</button>
+    </div>
+  </form>
+</div> -->
+
+<div class="signup-wrapper">
+  <form class="signup-container" #registerForm="ngForm">
+    <h4 class="form-title">Create Your Account</h4>
+
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Email address"
+        required
+        email
+        ngModel
+        name="email"
+        #email="ngModel"
+        class="form-input"
+      />
+      <div class="error-message" [hidden]="email.valid || email.untouched">
+        Please enter a valid email
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Create password (min 6 characters)"
+        required
+        minlength="6"
+        ngModel
+        name="password"
+        #password="ngModel"
+        class="form-input"
+      />
+      <div
+        class="error-message"
+        [hidden]="password.valid || password.untouched"
+      >
+        Password must be at least 6 characters
+      </div>
+    </div>
+
+    <!-- <div class="form-group">
+      <input
+        type="password"
+        placeholder="Confirm password"
+        required
+        ngModel
+        name="confirmPassword"
+        #confirmPassword="ngModel"
+        class="form-input"
+      />
+      <div
+        class="error-message"
+        [hidden]="confirmPassword.valid || confirmPassword.untouched"
+      >
+        Please confirm your password
+      </div>
+    </div> -->
+
+    <div class="button-group">
+      <button
+        class="btn btn-success"
+        [disabled]="registerForm.invalid"
+        (click)="register(registerForm)"
+      >
+        Sign Up
+      </button>
+      <button
+        type="button"
+        class="btn btn-danger"
+        (click)="reset(registerForm)"
+      >
+        reset Form
+      </button>
+    </div>
+
+    <div class="login-link">
+      Already have an account? <a routerLink="/login">Log in</a>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,180 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+  min-height: 80vh;
+}
+
+/* Login Wrapper */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Form Container */
+.login-container {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Form Title */
+.form-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Input Wrapper */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Input Fields */
+.form-input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Error Messages */
+.error-message {
+  color: #ff3860;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  padding-left: 5px;
+}
+
+/* Button Group */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.btn-green {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-green:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-red {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-red:hover {
+  background-color: #c82333;
+  transform: translateY(-2px);
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Mobile Footer */
+.mobile-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  display: none;
+}
+
+.mobile-footer a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 576px) {
+  .login-wrapper {
+    padding: 15px;
+    align-items: flex-start;
+    padding-top: 30px;
+  }
+  
+  .login-container {
+    padding: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .form-title {
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  .form-input {
+    padding: 10px 12px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  
+  .btn {
+    width: 100%;
+    padding: 12px;
+  }
+  
+  .mobile-footer {
+    display: block;
+  }
+}

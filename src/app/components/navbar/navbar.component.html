@@ -1,0 +1,76 @@
+<div>
+  <nav>
+    <div class="nav-container">
+      <div class="nav-brand">
+        <a routerLink="" routerLinkActive="active" class="brand-link">
+          <img
+            src="assets/images/logo.png"
+            alt="Rik Capital Logo"
+            class="logo"
+          />
+          <!-- <span>Rik Capital</span> -->
+        </a>
+      </div>
+
+      <div class="nav-menu">
+        <button
+          class="hamburger"
+          (click)="toggleMenu()"
+          [attr.aria-expanded]="menuActive"
+          aria-label="Menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <ul class="nav-links" [class.active]="menuActive">
+          <li>
+            <a
+              routerLink="/uploadReport"
+              routerLinkActive="active"
+              (click)="closeMenu()"
+              >Upload Reports</a
+            >
+          </li>
+          <li *ngIf="!isLoggedIn">
+            <a
+              routerLink="/login"
+              routerLinkActive="active"
+              (click)="closeMenu()"
+              >Login</a
+            >
+          </li>
+          <li *ngIf="isLoggedIn">
+            <a (click)="logout(); closeMenu()">Logout</a>
+          </li>
+          <li>
+            <a
+              routerLink="/signup"
+              routerLinkActive="active"
+              (click)="closeMenu()"
+              >Signup</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/about"
+              routerLinkActive="active"
+              (click)="closeMenu()"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/contact"
+              routerLinkActive="active"
+              (click)="closeMenu()"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <hr />
+</div>

@@ -1,0 +1,109 @@
+<!-- <div class="login-wrapper">
+  <form class="container" [formGroup]="loginForm" autocomplete="off">
+    <h4 class="form-title">Please Login</h4>
+
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Enter email here"
+        formControlName="email"
+        class="form-input"
+      />
+      <h5
+        class="error-message"
+        [hidden]="
+          loginForm.controls['email'].valid ||
+          loginForm.controls['email'].untouched
+        "
+      >
+        Enter a valid email
+      </h5>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Enter password here"
+        formControlName="password"
+        class="form-input"
+      />
+      <h5
+        class="error-message"
+        [hidden]="
+          loginForm.controls['password'].valid ||
+          loginForm.controls['password'].untouched
+        "
+      >
+        Password must be at least 6 characters
+      </h5>
+    </div>
+
+    <div class="button-group">
+      <button
+        class="btn btn-green"
+        [disabled]="loginForm.invalid"
+        (click)="login()"
+      >
+        Login
+      </button>
+      <button class="btn btn-red" type="button" (click)="reset()">Reset</button>
+    </div>
+  </form>
+</div> -->
+
+<div class="login-wrapper">
+  <form class="login-container" [formGroup]="loginForm" autocomplete="off">
+    <h4 class="form-title">Please Login</h4>
+
+    <div class="form-group">
+      <input
+        type="email"
+        placeholder="Enter email here"
+        formControlName="email"
+        class="form-input"
+      />
+      <div
+        class="error-message"
+        [hidden]="
+          loginForm.controls['email'].valid ||
+          loginForm.controls['email'].untouched
+        "
+      >
+        Enter a valid email
+      </div>
+    </div>
+
+    <div class="form-group">
+      <input
+        type="password"
+        placeholder="Enter password here"
+        formControlName="password"
+        class="form-input"
+      />
+      <div
+        class="error-message"
+        [hidden]="
+          loginForm.controls['password'].valid ||
+          loginForm.controls['password'].untouched
+        "
+      >
+        Password must be at least 6 characters
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button
+        class="btn btn-green"
+        [disabled]="loginForm.invalid"
+        (click)="login()"
+      >
+        Login
+      </button>
+      <button class="btn btn-red" type="button" (click)="reset()">Reset</button>
+    </div>
+
+    <div class="mobile-footer">
+      <p>Don't have an account? <a routerLink="/signup">Sign up</a></p>
+    </div>
+  </form>
+</div>
