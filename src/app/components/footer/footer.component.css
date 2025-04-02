@@ -1,20 +1,46 @@
 html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+}
+
+/* Footer Styles */
+.footer {
+  background: #343a40;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  width: 100%;
+}
+
+/* Adjust column stacking for mobile */
+@media (max-width: 768px) {
+  .footer .row {
+      flex-direction: column;
+      text-align: center;
   }
-  
-  .content {
-    flex: 1; /* Pushes the footer to the bottom */
+
+  .footer .col-md-4 {
+      margin-bottom: 20px;
   }
-  
-  .footer {
-    background: #343a40;
-    color: white;
-    padding: 40px 0;
-    text-align: center;
-    position: relative;
-    width: 100%;
+
+  .footer h5 {
+      font-size: 16px;
   }
-  
+
+  .footer p, 
+  .footer a {
+      font-size: 14px;
+  }
+
+  .social-icons a {
+      font-size: 18px;
+      display: inline-block;
+      margin: 5px;
+  }
+}
